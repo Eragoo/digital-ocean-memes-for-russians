@@ -27,7 +27,10 @@
 ![приклад](https://github.com/Eragoo/digital-ocean-memes-for-russians/blob/main/Screenshot%202022-02-27%20at%2017.10.14.png)
 6. Буде щось таке:
 ![приклад](https://github.com/Eragoo/digital-ocean-memes-for-russians/blob/main/Screenshot%202022-02-27%20at%2017.10.22.png)
-8. Далі виконуємо команду git clone https://github.com/almerico/bombardier.git
+8. Далі виконуємо команду
+```
+git clone https://github.com/almerico/bombardier.git
+```
 ![приклад](https://github.com/Eragoo/digital-ocean-memes-for-russians/blob/main/Screenshot%202022-02-27%20at%2017.10.33.png)
 8.Переходимо в папку проекту за допомогою команди: 
 ```
