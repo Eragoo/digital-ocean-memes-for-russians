@@ -10,21 +10,33 @@
 
 Обираємо Marketplace -> Dockerза основу, CPU Options - regular Inter with SSD, той що за солодкі 5$ за місяць. Обираємо локацію, є сенс брати щось в Європі так як буде менше затримка з рашкою. Обираємо на свій смак.  Коли реєструємо обираємо захід по root password.  Тицяємо зелену кнопку Create Droplet
 
+![приклад](https://github.com/Eragoo/digital-ocean-memes-for-russians/blob/main/Screenshot%202022-02-27%20at%2017.09.34.png)
 
+![приклад](https://github.com/Eragoo/digital-ocean-memes-for-russians/blob/main/Screenshot%202022-02-27%20at%2017.09.45.png)
+
+![приклад](https://github.com/Eragoo/digital-ocean-memes-for-russians/blob/main/Screenshot%202022-02-27%20at%2017.09.57.png)
 
 
 
 
 4. Чекаємо як цей  сервер створиться (ім*я у кожного різне)
 Буде отак:
+![приклад](https://github.com/Eragoo/digital-ocean-memes-for-russians/blob/main/Screenshot%202022-02-27%20at%2017.10.02.png)
+
 5. Заходимо в дроплет і тицяємо на Console:
-
+![приклад](https://github.com/Eragoo/digital-ocean-memes-for-russians/blob/main/Screenshot%202022-02-27%20at%2017.10.14.png)
 6. Буде щось таке:
-7. Далі виконуємо команду git clone https://github.com/almerico/bombardier.git
-
-8.Переходимо в папку проекту за допомогою команди: cd bombardier  
+![приклад](https://github.com/Eragoo/digital-ocean-memes-for-russians/blob/main/Screenshot%202022-02-27%20at%2017.10.22.png)
+8. Далі виконуємо команду git clone https://github.com/almerico/bombardier.git
+![приклад](https://github.com/Eragoo/digital-ocean-memes-for-russians/blob/main/Screenshot%202022-02-27%20at%2017.10.33.png)
+8.Переходимо в папку проекту за допомогою команди: 
+```
+cd bombardier  
+```
 Далі запускаємо атаку на всі ресурси з файлу resources.txt що знаходиться в директорії
+```
 ./run_all_docker.sh
-
+```
+![приклад](https://github.com/Eragoo/digital-ocean-memes-for-russians/blob/main/Screenshot%202022-02-27%20at%2017.10.45.png)
 Той файл можна редагувати самостійно, з консолі, для цього можна гуглити як користуватись nano.
 Вітаю, ви частина команди кібер партизанів!
